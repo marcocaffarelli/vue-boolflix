@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Milestone2</title>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     </head>
     <body>
         <div id="app">
@@ -21,7 +22,18 @@
                 <!-- lingua -->
                 <div class="lingua">Lingua:{{risultato.original_language}}</div>
                 <!-- voto -->
-                <div class="voto">Voto:{{voto[index]}}</div>
+                <div class="voto">
+                    <!-- se il voto è uguale a 5 -->
+                    <i class="fas fa-star" v-if="voto[index] == 5"></i>
+                    <!-- se il voto è uguale a 4 -->
+                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4"></i>
+                    <!-- se il voto è uguale a 3 -->
+                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3"></i>
+                    <!-- se il voto è uguale a 2 -->
+                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2"></i>
+                    <!-- se il voto è uguale a 1 -->
+                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2 || voto[index] == 1"></i>
+                </div>
             </div>
 
         </div>
