@@ -19,7 +19,8 @@ let app = new Vue({
 
     methods:{
         cerca(){
-            axios.get("https://api.themoviedb.org/3/search/movie?api_key=fbebf38b6276068d6e0065d2377875c0&query=ritorno+al+futuro")
+            //concatenando il link con this.film posso cercare il film che scrivo nell'input
+            axios.get(("https://api.themoviedb.org/3/search/movie?api_key=fbebf38b6276068d6e0065d2377875c0&query=") + (this.film))
             .then(response =>{
                 //verifico lo stato della risposta
                 //console.log(response);
