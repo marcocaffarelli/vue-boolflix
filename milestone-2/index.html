@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Milestone2</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="searchbar">
+                <input type="text" v-model="film">
+                <button @click="cerca(index)">invio</button >
+            </div>
+
+            <div class="film_card" v-for="(risultato, index) in risultati">
+                <!-- titolo -->
+                <div class="titolo">Titolo:{{risultato.title}}</div>
+                <!-- titolo originale -->
+                <div class="titolo originale">Titolo originale:{{risultato.original_title}}</div>
+                <!-- lingua -->
+                <div class="lingua">Lingua:{{risultato.original_language}}</div>
+                <!-- voto -->
+                <div class="voto">Voto:{{voto[index]}}</div>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="assets/js/main.js" charset="utf-8"></script>
+    </body>
+</html>
