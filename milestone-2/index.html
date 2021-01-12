@@ -20,7 +20,10 @@
                 <!-- titolo originale -->
                 <div class="titolo originale">Titolo originale:{{risultato.original_title}}</div>
                 <!-- lingua -->
-                <div class="lingua">Lingua:{{risultato.original_language}}</div>
+                <template>
+                    <div class="lingua">Lingua:<img :src="`https://flagcdn.com/16x12/${risultato.original_language}.png`"></div>
+                    <div class="lingua" v-else>Lingua:{{risultato.original_language}}<img></div>
+                </template>
                 <!-- voto -->
                 <div class="voto">
                     <!-- se il voto è uguale a 5 -->

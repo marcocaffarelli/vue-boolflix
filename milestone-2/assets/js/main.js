@@ -23,8 +23,7 @@ let app = new Vue({
     },
 
     mounted(){
-            
-        
+
     },
 
     methods:{
@@ -43,6 +42,7 @@ let app = new Vue({
                 }
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
             });
-        }
+        },
+   
     }
 });
