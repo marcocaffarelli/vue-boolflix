@@ -20,6 +20,8 @@ let app = new Vue({
         film: "",
         risultati:"",
         voto:[],
+        risultatiSerie:"",
+        votoSerie:[],
     },
 
     mounted(){
@@ -43,6 +45,22 @@ let app = new Vue({
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
 
             });
+
+             //concatenando il link con this.film posso cercare il film che scrivo nell'input
+             axios.get(("https://api.themoviedb.org/3/search/tv?api_key=fbebf38b6276068d6e0065d2377875c0&query=") + (this.film))
+             .then(response =>{
+                 //verifico lo stato della risposta
+                 //console.log(response);
+                 //console.log(response.data.results);
+                 this.risultatiSerie = response.data.results
+                 this.risultatiSerie.forEach(element => {
+                     element = Math.ceil((element.vote_average)/2);
+                     //console.log(element);
+                     this.votoSerie.push(element);
+                 });
+                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
+ 
+             });
         },
   
    
