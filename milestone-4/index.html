@@ -25,7 +25,7 @@
                 <!-- FILM -->
                     <div class="film_card" v-for="(risultato, index) in risultati">
                         <!-- titolo -->
-                        <div class="titolo">Titolo:{{risultato.title}}</div>
+                        <div class="titolo">{{risultato.title}}</div>
                         <!-- titolo originale -->
                         <div class="titolo_originale">Titolo originale:{{risultato.original_title}}</div>
                         <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
@@ -66,7 +66,7 @@
                     <!-- SERIE TV -->
                     <div class="film_card" v-for="(risultato, index) in risultatiSerie">
                         <!-- titolo -->
-                        <div class="titolo">Titolo:{{risultato.name}}</div>
+                        <div class="titolo">{{risultato.name}}</div>
                         <!-- titolo originale -->
                         <div class="titolo_originale">Titolo originale:{{risultato.original_name}}</div>
                         <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>

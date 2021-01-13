@@ -58,16 +58,20 @@ main{
    background-color: black;
    color: yellow;
 }
-.film_card:hover .titolo, .film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto {
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto{
    display: block;
  }
- .film_card:hover .immagine_copertina{
+ .film_card:hover .immagine_copertina, .film_card:hover .titolo{
     display: none
  }
 .immagine_copertina>img{
     width:100%;
-
 }
-.titolo, .titolo_originale, .lingua, .voto{
+.titolo_originale, .lingua, .voto{
     display: none;
+}
+.titolo{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
 }
