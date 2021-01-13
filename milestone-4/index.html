@@ -20,87 +20,92 @@
                 </div>
             </header>
 
-            <!-- FILM -->
-            <div class="film_card" v-for="(risultato, index) in risultati">
-                <!-- titolo -->
-                <div class="titolo">Titolo:{{risultato.title}}</div>
-                <!-- titolo originale -->
-                <div class="titolo originale">Titolo originale:{{risultato.original_title}}</div>
-                <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
-                <!-- lingua -->
-                <template>
-                    <!-- se la lingua è inglese carica l'immagine -->
-                    <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
-                    <!-- se la lingua è italiano carica l'immagine -->
-                    <div class="lingua" v-else-if="risultato.original_language == 'it'">Lingua:<img src="./assets/img/bandiera italia.png"></div>
-                    <!-- se la lingua non è ne inglese ne italiano carica l'immagine e scrivi la lingua -->
-                    <div class="lingua" v-else>Lingua:<img src="./assets/img/no flag.png"><span>{{risultato.original_language}}</span></div>
-                </template>
-                <!-- voto -->
-                <div class="voto">
-                    <!-- se il voto è uguale a 5 -->
-                    <i class="fas fa-star" v-if="voto[index] == 5"></i>
-                    <!-- se il voto è uguale a 4 -->
-                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4"></i>
-                    <!-- se il voto è uguale a 3 -->
-                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3"></i>
-                    <!-- se il voto è uguale a 2 -->
-                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2"></i>
-                    <!-- se il voto è uguale a 1 -->
-                    <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2 || voto[index] == 1"></i>
-                     <!-- se il voto è uguale a 0 -->
-                     <i class="far fa-star" v-if="voto[index] == 0"></i>
-                     <!-- se il voto è uguale a 1 -->
-                    <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1"></i>
-                      <!-- se il voto è uguale a 2 -->
-                    <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2"></i>
-                     <!-- se il voto è uguale a 3 -->
-                    <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2 || voto[index] == 3"></i>
-                    <!-- se il voto è uguale a 4 -->
-                    <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2 || voto[index] == 3 || voto[index] == 4"></i>
-                </div>
-            </div>
+            <main>
+                <div class="container">
+                <!-- FILM -->
+                    <div class="film_card" v-for="(risultato, index) in risultati">
+                        <!-- titolo -->
+                        <div class="titolo">Titolo:{{risultato.title}}</div>
+                        <!-- titolo originale -->
+                        <div class="titolo originale">Titolo originale:{{risultato.original_title}}</div>
+                        <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
+                        <!-- lingua -->
+                        <template>
+                            <!-- se la lingua è inglese carica l'immagine -->
+                            <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
+                            <!-- se la lingua è italiano carica l'immagine -->
+                            <div class="lingua" v-else-if="risultato.original_language == 'it'">Lingua:<img src="./assets/img/bandiera italia.png"></div>
+                            <!-- se la lingua non è ne inglese ne italiano carica l'immagine e scrivi la lingua -->
+                            <div class="lingua" v-else>Lingua:<img src="./assets/img/no flag.png"><span>{{risultato.original_language}}</span></div>
+                        </template>
+                        <!-- voto -->
+                        <div class="voto">
+                            <!-- se il voto è uguale a 5 -->
+                            <i class="fas fa-star" v-if="voto[index] == 5"></i>
+                            <!-- se il voto è uguale a 4 -->
+                            <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4"></i>
+                            <!-- se il voto è uguale a 3 -->
+                            <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3"></i>
+                            <!-- se il voto è uguale a 2 -->
+                            <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2"></i>
+                            <!-- se il voto è uguale a 1 -->
+                            <i class="fas fa-star" v-if="voto[index] == 5 || voto[index] == 4 || voto[index] == 3 || voto[index] == 2 || voto[index] == 1"></i>
+                            <!-- se il voto è uguale a 0 -->
+                            <i class="far fa-star" v-if="voto[index] == 0"></i>
+                            <!-- se il voto è uguale a 1 -->
+                            <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1"></i>
+                            <!-- se il voto è uguale a 2 -->
+                            <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2"></i>
+                            <!-- se il voto è uguale a 3 -->
+                            <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2 || voto[index] == 3"></i>
+                            <!-- se il voto è uguale a 4 -->
+                            <i class="far fa-star" v-if="voto[index] == 0 || voto[index] == 1 || voto[index] == 2 || voto[index] == 3 || voto[index] == 4"></i>
+                        </div>
+                    </div>
 
-            <!-- SERIE TV -->
-            <div class="serie_tv_card" v-for="(risultato, index) in risultatiSerie">
-                <!-- titolo -->
-                <div class="titolo">Titolo:{{risultato.name}}</div>
-                <!-- titolo originale -->
-                <div class="titolo originale">Titolo originale:{{risultato.original_name}}</div>
-                <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
-                <!-- lingua -->
-                <template>
-                    <!-- se la lingua è inglese carica l'immagine -->
-                    <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
-                    <!-- se la lingua è italiano carica l'immagine -->
-                    <div class="lingua" v-else-if="risultato.original_language == 'it'">Lingua:<img src="./assets/img/bandiera italia.png"></div>
-                    <!-- se la lingua non è ne inglese ne italiano carica l'immagine e scrivi la lingua -->
-                    <div class="lingua" v-else>Lingua:<img src="./assets/img/no flag.png"><span>{{risultato.original_language}}</span></div>
-                </template>
-                <!-- voto -->
-                <div class="voto">
-                    <!-- se il votoSerie è uguale a 5 -->
-                    <i class="fas fa-star" v-if="votoSerie[index] == 5"></i>
-                    <!-- se il votoSerie è uguale a 4 -->
-                    <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4"></i>
-                    <!-- se il votoSerie è uguale a 3 -->
-                    <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3"></i>
-                    <!-- se il votoSerie è uguale a 2 -->
-                    <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3 || votoSerie[index] == 2"></i>
-                    <!-- se il votoSerie è uguale a 1 -->
-                    <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3 || votoSerie[index] == 2 || votoSerie[index] == 1"></i>
-                    <!-- se il voto serie è uguale a 0 -->
-                    <i class="far fa-star" v-if="votoSerie[index] == 0 "></i>
-                     <!-- se il voto serie è uguale a 1 -->
-                    <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 "></i>
-                      <!-- se il voto serie è uguale a 2 -->
-                    <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2"></i>
-                     <!-- se il voto serie è uguale a 3 -->
-                    <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2 || votoSerie[index] == 3"></i>
-                    <!-- se il voto serie è uguale a 4 -->
-                    <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2 || votoSerie[index] == 3 || votoSerie[index] == 4"></i>
+                    <!-- SERIE TV -->
+                    <div class="serie_tv_card" v-for="(risultato, index) in risultatiSerie">
+                        <!-- titolo -->
+                        <div class="titolo">Titolo:{{risultato.name}}</div>
+                        <!-- titolo originale -->
+                        <div class="titolo originale">Titolo originale:{{risultato.original_name}}</div>
+                        <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
+                        <!-- lingua -->
+                        <template>
+                            <!-- se la lingua è inglese carica l'immagine -->
+                            <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
+                            <!-- se la lingua è italiano carica l'immagine -->
+                            <div class="lingua" v-else-if="risultato.original_language == 'it'">Lingua:<img src="./assets/img/bandiera italia.png"></div>
+                            <!-- se la lingua non è ne inglese ne italiano carica l'immagine e scrivi la lingua -->
+                            <div class="lingua" v-else>Lingua:<img src="./assets/img/no flag.png"><span>{{risultato.original_language}}</span></div>
+                        </template>
+                        <!-- voto -->
+                        <div class="voto">
+                            <!-- se il votoSerie è uguale a 5 -->
+                            <i class="fas fa-star" v-if="votoSerie[index] == 5"></i>
+                            <!-- se il votoSerie è uguale a 4 -->
+                            <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4"></i>
+                            <!-- se il votoSerie è uguale a 3 -->
+                            <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3"></i>
+                            <!-- se il votoSerie è uguale a 2 -->
+                            <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3 || votoSerie[index] == 2"></i>
+                            <!-- se il votoSerie è uguale a 1 -->
+                            <i class="fas fa-star" v-if="votoSerie[index] == 5 || votoSerie[index] == 4 || votoSerie[index] == 3 || votoSerie[index] == 2 || votoSerie[index] == 1"></i>
+                            <!-- se il voto serie è uguale a 0 -->
+                            <i class="far fa-star" v-if="votoSerie[index] == 0 "></i>
+                            <!-- se il voto serie è uguale a 1 -->
+                            <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 "></i>
+                            <!-- se il voto serie è uguale a 2 -->
+                            <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2"></i>
+                            <!-- se il voto serie è uguale a 3 -->
+                            <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2 || votoSerie[index] == 3"></i>
+                            <!-- se il voto serie è uguale a 4 -->
+                            <i class="far fa-star" v-if="votoSerie[index] == 0 || votoSerie[index] == 1 || votoSerie[index] == 2 || votoSerie[index] == 3 || votoSerie[index] == 4"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </main>
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>

@@ -8,12 +8,18 @@
     height:12px;
     width:16px;
 }
-header{
+
+/********** HEADER **********/
+
+header, main{
     width:100%;
+}
+header{
     height:80px;
     background-color: black;
 }
 
+/* searchbar */
 .searchbar{
     height:100%;
     width: 80%;
@@ -25,3 +31,31 @@ header{
 .searchbar>h1{
     color: yellow;
 }
+
+/********** MAIN **********/
+main{
+    min-height: calc(100vh - 80px);
+    background-color: grey;
+
+}
+.container{
+    height:100%;
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+    margin: auto;
+}
+.film_card, .serie_tv_card {
+   width:25%;
+   height: 300px;
+   border:1px solid yellow;
+   background-color: black;
+   color: yellow;
+   box-shadow: 1px 1px 1px 1px black;
+}
+.immagine_copertina>img{
+    width:100%;
+ }
