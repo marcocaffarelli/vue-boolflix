@@ -48,14 +48,26 @@ main{
     padding: 100px 0;
     margin: auto;
 }
-.film_card, .serie_tv_card {
-   width:25%;
+.film_card {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width:20%;
    height: 300px;
    border:1px solid yellow;
    background-color: black;
    color: yellow;
-   box-shadow: 1px 1px 1px 1px black;
 }
+.film_card:hover .titolo, .film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto {
+   display: block;
+ }
+ .film_card:hover .immagine_copertina{
+    display: none
+ }
 .immagine_copertina>img{
     width:100%;
- }
+
+}
+.titolo, .titolo_originale, .lingua, .voto{
+    display: none;
+}
