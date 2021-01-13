@@ -75,3 +75,44 @@ main{
     font-weight: bold;
     text-align: center;
 }
+
+/********** Media QUery **********/
+@media screen and (min-width: 769px) and (max-width: 1200px){
+    .film_card{
+        width: 25%;
+    }
+    .titolo{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px){
+    .film_card{
+        width: 33.3%;
+    }
+    .titolo{
+        font-size: 18px;
+    }
+    .titolo_originale, .lingua, .voto{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .searchbar>h1{
+        color: yellow;
+        font-size: 1.3em;
+    }
+    input{
+        width:100px;
+    }
+    .film_card{
+        width: 50%;
+    }
+    .titolo{
+        font-size: 18px;
+    }
+    .titolo_originale, .lingua, .voto{
+        font-size: 12px;
+    }
+}
