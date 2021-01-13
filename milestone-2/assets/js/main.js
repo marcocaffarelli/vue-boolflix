@@ -35,9 +35,8 @@ let app = new Vue({
                 //console.log(response);
                 //console.log(response.data.results);
                 this.risultati = response.data.results
-                //ciclo for each per dimezzare e arrotondare il voto
                 this.risultati.forEach(element => {
-                    element = Math.ceil((this.risultati.vote_average)/2);
+                    element = Math.ceil((element.vote_average)/2);
                     //console.log(element);
                     this.voto.push(element);
                 });
@@ -49,4 +48,6 @@ let app = new Vue({
    
     }
 });
+
+    
 
