@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lingua > img{
+    height:12px;
+    width:16px;
+}
+header{
+    width:100%;
+    height:80px;
+    background-color: black;
+}
+
+.searchbar{
+    height:100%;
+    width: 80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+}
+.searchbar>h1{
+    color: yellow;
+}
