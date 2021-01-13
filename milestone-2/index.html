@@ -6,12 +6,13 @@
         <title>Milestone2</title>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
         <div id="app">
             <div class="searchbar">
                 <input type="text" v-model="film">
-                <button @click="cerca(index)">invio</button >
+                <button @click="cerca">invio</button>
             </div>
 
             <div class="film_card" v-for="(risultato, index) in risultati">
@@ -21,8 +22,12 @@
                 <div class="titolo originale">Titolo originale:{{risultato.original_title}}</div>
                 <!-- lingua -->
                 <template>
-                    <div class="lingua">Lingua:<img :src="`https://flagcdn.com/16x12/${risultato.original_language}.png`"></div>
-                    <div class="lingua" v-else>Lingua:{{risultato.original_language}}<img></div>
+                    <!-- se la lingua è inglese carica l'immagine -->
+                    <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
+                    <!-- se la lingua è italiano carica l'immagine -->
+                    <div class="lingua" v-else-if="risultato.original_language == 'it'">Lingua:<img src="./assets/img/bandiera italia.png"></div>
+                    <!-- se la lingua non è ne inglese ne italiano carica l'immagine e scrivi la lingua -->
+                    <div class="lingua" v-else>Lingua:<img src="./assets/img/no flag.png"><span>{{risultato.original_language}}</span></div>
                 </template>
                 <!-- voto -->
                 <div class="voto">

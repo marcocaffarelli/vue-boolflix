@@ -37,12 +37,14 @@ let app = new Vue({
                 this.risultati = response.data.results
                 for (let i = 0; 0 < this.risultati.length; i++) {
                     const element = Math.ceil((this.risultati[i].vote_average)/2);
-                    console.log(element);
+                    //console.log(element);
                     this.voto.push(element);
                 }
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
+
             });
         },
+  
    
     }
 });
