@@ -16,6 +16,7 @@ let app = new Vue({
         voto:[],
         risultatiSerie:"",
         votoSerie:[],
+        attoriPrincipali:[],
     },
 
     mounted(){
@@ -32,12 +33,19 @@ let app = new Vue({
                 //console.log(response.data.results);
                 this.risultati = response.data.results
                 this.risultati.forEach(element => {
-                    element = Math.ceil((element.vote_average)/2);
+                    elemento = Math.ceil((element.vote_average)/2);
                     //console.log(element);
-                    this.voto.push(element);
+                    this.voto.push(elemento);
+                    //tramite la proprieta id trovo il cast del film
+                    axios.get(("https://api.themoviedb.org/3/movie/") + (element.id) + ("/credits?api_key=fbebf38b6276068d6e0065d2377875c0"))
+                        .then(response =>{
+                            //verifico lo stato della risposta
+                            //console.log(response);
+                            const attori=(response.data.cast);
+                            console.log(attori);
+                        });
                 });
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
-
             });
 
              //concatenando il link con this.film posso cercare il film che scrivo nell'input
@@ -51,10 +59,12 @@ let app = new Vue({
                      element = Math.ceil((element.vote_average)/2);
                      //console.log(element);
                      this.votoSerie.push(element);
-                 });
-                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
+                    });
+                    //console.log(Math.ceil((this.risultati[0].vote_average)/2));
  
              });
+
+             
         },
   
    
