@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Texturina', serif;
+}
+
+.lingua > img{
+    height:12px;
+    width:16px;
+}
+
+/********** HEADER **********/
+
+header, main{
+    width:100%;
+}
+header{
+    height:80px;
+    background-color: black;
+}
+
+/* searchbar */
+.searchbar{
+    height:100%;
+    width: 80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+}
+.searchbar>h1{
+    color: yellow;
+    text-shadow: 1px 1px yellow;
+}
+
+
+/********** MAIN **********/
+main{
+    min-height: calc(100vh - 80px);
+    background-color: rgb(132 34 223 / 90%);
+
+}
+.container{
+    height:100%;
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+    margin: auto;
+}
+.film_card {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width:20%;
+   height: 300px;
+   border: 1px solid rgb(132 34 223 / 90%);
+   border-radius: 10px;
+   background-color: black;
+   color: yellow;
+}
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto{
+   display: block;
+ }
+ .film_card:hover .immagine_copertina, .film_card:hover .titolo{
+    display: none
+ }
+.immagine_copertina>img{
+    width:100%;
+}
+.titolo_originale, .lingua, .voto{
+    display: none;
+}
+.titolo{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/********** Media QUery **********/
+@media screen and (min-width: 769px) and (max-width: 1200px){
+    .film_card{
+        width: 25%;
+    }
+    .titolo{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px){
+    .film_card{
+        width: 33.3%;
+    }
+    .titolo{
+        font-size: 18px;
+    }
+    .titolo_originale, .lingua, .voto{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .searchbar>h1{
+        color: yellow;
+        font-size: 1.3em;
+    }
+    input{
+        width:100px;
+    }
+    .film_card{
+        width: 50%;
+    }
+    .titolo{
+        font-size: 18px;
+    }
+    .titolo_originale, .lingua, .voto{
+        font-size: 12px;
+    }
+}

@@ -16,6 +16,8 @@ let app = new Vue({
         voto:[],
         risultatiSerie:"",
         votoSerie:[],
+        nomiAttori:[],
+        attoriPrincipali:[],
     },
 
     mounted(){
@@ -32,10 +34,28 @@ let app = new Vue({
                 //console.log(response.data.results);
                 this.risultati = response.data.results
                 this.risultati.forEach(element => {
-                    element = Math.ceil((element.vote_average)/2);
+                    elemento = Math.ceil((element.vote_average)/2);
                     //console.log(element);
-                    this.voto.push(element);
-                    
+                    this.voto.push(elemento);
+                    //tramite la proprieta id trovo il cast del film
+                    axios.get(("https://api.themoviedb.org/3/movie/") + (element.id) + ("/credits?api_key=fbebf38b6276068d6e0065d2377875c0"))
+                        .then(response =>{
+                            //verifico lo stato della risposta
+                            //console.log(response);
+                            const attori=(response.data.cast);
+                            //console.log(attori);
+                            attori.forEach(element => {
+                               this.nomiAttori.push(element.name) 
+                            });
+                            //console.log(this.nomiAttori);
+                            //Attraverso un ciclo for inserisco nell'array attoriPrincipali i primi 5 attori del cast
+                            for (let index = 0; index < 5; index++) {
+                                this.attoriPrincipali.push(this.nomiAttori[index]);
+                                //console.log(stars);
+                            }
+                            console.log(this.attoriPrincipali);
+                
+                        });
                 });
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
             });
