@@ -62,7 +62,7 @@ main{
    background-color: black;
    color: yellow;
 }
-.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto{
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto, .film_card:hover .cast{
    display: block;
  }
  .film_card:hover .immagine_copertina, .film_card:hover .titolo{
@@ -71,13 +71,18 @@ main{
 .immagine_copertina>img{
     width:100%;
 }
-.titolo_originale, .lingua, .voto{
+.titolo_originale, .lingua, .voto, .cast{
     display: none;
+    padding-left: 2px;
 }
 .titolo{
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+.cast li{
+    list-style: none;
+    font-size: 10px;
 }
 
 /********** Media QUery **********/
@@ -97,8 +102,12 @@ main{
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto{
+    .titolo_originale, .lingua, .voto, .cast{
         font-size: 12px;
+    }
+    .cast li{
+        list-style: none;
+        font-size: 8px;
     }
 }
 
@@ -117,6 +126,10 @@ main{
         font-size: 18px;
     }
     .titolo_originale, .lingua, .voto{
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .cast li{
+        list-style: none;
+        font-size: 7px;
     }
 }

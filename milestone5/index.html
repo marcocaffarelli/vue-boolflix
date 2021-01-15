@@ -34,7 +34,7 @@
                         <!-- lingua -->
                         <div class="cast">
                             <ul>Cast:
-                                <li v-for="attore in cast(risultato.id)">{{attore}}</li>
+                                <li v-for="attore in risultato.attori">{{attore}}</li> 
                             </ul>
                         </div>
                         <template>
@@ -77,6 +77,9 @@
                         <!-- titolo originale -->
                         <div class="titolo_originale">Titolo originale:{{risultato.original_name}}</div>
                         <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
+                        <ul class="cast">Cast:
+                            <li v-for="attore in risultato.attori">{{attore}}</li> 
+                        </ul>
                         <!-- lingua -->
                         <template>
                             <!-- se la lingua è inglese carica l'immagine -->
