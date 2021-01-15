@@ -50,7 +50,7 @@ let app = new Vue({
                  this.risultatiSerie.forEach(element => {
                      elemento = Math.ceil((element.vote_average)/2);
                      //console.log(element);
-                     this.votoSerie.push(element);
+                     this.votoSerie.push(elemento);
                      //invoco la funzione cast e la salvo in una variabile
                     const nomiAttori = this.cast(element.id)
                     //attraverso il vue set aggiungo una proprietà all'oggetto

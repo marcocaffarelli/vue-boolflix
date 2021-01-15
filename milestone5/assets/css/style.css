@@ -125,7 +125,7 @@ main{
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto{
+    .titolo_originale, .lingua, .voto, .cast{
         font-size: 10px;
     }
     .cast li{
