@@ -32,6 +32,11 @@
                         <div class="titolo_originale">Titolo originale:{{risultato.original_title}}</div>
                         <div class="immagine_copertina"><img :src="`http://image.tmdb.org/t/p/w500/${risultato.backdrop_path}`" alt=""></div>
                         <!-- lingua -->
+                        <div class="cast">
+                            <ul>Cast:
+                                <li v-for="attore in cast(risultato.id)">{{attore}}</li>
+                            </ul>
+                        </div>
                         <template>
                             <!-- se la lingua è inglese carica l'immagine -->
                             <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
