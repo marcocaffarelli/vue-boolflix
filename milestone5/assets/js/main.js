@@ -36,6 +36,9 @@ let app = new Vue({
                     const nomiAttori = this.cast(element.id)
                     //attraverso il vue set aggiungo una proprietà all'oggetto
                     Vue.set(element, 'attori', nomiAttori)
+
+                    const generi = element.genre_ids
+                    console.log(generi);
                 });
                 //console.log(Math.ceil((this.risultati[0].vote_average)/2));
             });
@@ -70,7 +73,7 @@ let app = new Vue({
         * return array
         * 
         * */ 
-            cast(filmId){
+        cast(filmId){
             let attori = [];
             let attoriPrincipali= [];
             axios.get(("https://api.themoviedb.org/3/movie/") + (filmId) + ("/credits?api_key=fbebf38b6276068d6e0065d2377875c0"))
