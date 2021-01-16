@@ -38,7 +38,7 @@ header{
 /********** MAIN **********/
 main{
     min-height: calc(100vh - 80px);
-    background-color: rgb(132 34 223 / 90%);
+    background-color: #74120b;;
 
 }
 .container{
@@ -52,27 +52,34 @@ main{
     margin: auto;
 }
 .film_card {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   width:20%;
-   height: 300px;
-   border: 1px solid rgb(132 34 223 / 90%);
+   width:25%;
+   height: 455px;
+   border: 3px solid #74120b;
    border-radius: 10px;
    background-color: black;
+   background-size: cover;
    color: yellow;
+   margin-bottom: 15px;
 }
-.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto{
+.card-black{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    display: none;
+}
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto, .film_card:hover .cast, .film_card:hover .titolo{
    display: block;
  }
- .film_card:hover .immagine_copertina, .film_card:hover .titolo{
-    display: none
+ .film_card:hover .card-black{
+    display: block;
  }
-.immagine_copertina>img{
-    width:100%;
-}
-.titolo_originale, .lingua, .voto{
+.titolo_originale, .lingua, .voto, .cast, .titolo{
     display: none;
+    padding-left: 2px;
 }
 .titolo{
     font-size: 20px;
@@ -81,28 +88,40 @@ main{
 }
 
 /********** Media QUery **********/
-@media screen and (min-width: 769px) and (max-width: 1200px){
+@media screen and (min-width: 970px) and (max-width: 1200px){
     .film_card{
         width: 25%;
+        height: 380px;
     }
     .titolo{
         font-size: 20px;
     }
 }
 
-@media screen and (min-width: 576px) and (max-width: 768px){
+@media screen and (min-width: 769px) and (max-width: 970px){
     .film_card{
         width: 33.3%;
+        height: 380px;
+    }
+    .titolo{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 769px){
+    .film_card{
+        width: 50%;
+        height: 330px;
     }
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto{
+    .titolo_originale, .lingua, .voto, .cast{
         font-size: 12px;
     }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 450px){
     .searchbar>h1{
         color: yellow;
         font-size: 1.3em;
@@ -111,12 +130,13 @@ main{
         width:100px;
     }
     .film_card{
-        width: 50%;
+        width: 100%;
+        height: 350px;
     }
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto{
+    .titolo_originale, .lingua, .voto, .cast{
         font-size: 12px;
     }
 }
