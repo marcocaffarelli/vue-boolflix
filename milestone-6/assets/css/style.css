@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Texturina', serif;
+}
+
+.lingua > img{
+    height:12px;
+    width:16px;
+}
+
+/********** HEADER **********/
+
+header, main{
+    width:100%;
+}
+header{
+    height:80px;
+    background-color: black;
+}
+
+/* searchbar */
+.searchbar{
+    height:100%;
+    width: 80%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+}
+.searchbar>h1{
+    color: yellow;
+    text-shadow: 1px 1px yellow;
+}
+
+
+/********** MAIN **********/
+main{
+    min-height: calc(100vh - 80px);
+    background-color: #74120b;;
+
+}
+.container{
+    height:100%;
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+    margin: auto;
+}
+.film_card {
+    width:25%;
+    height: 455px;
+    border: 3px solid #74120b;
+    border-radius: 10px;
+    background-color: black;
+    background-size: cover;
+    color: yellow;
+    margin-bottom: 15px;
+}
+.card-black{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    display: none;
+}
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto, .film_card:hover .cast, .film_card:hover .titolo, .film_card:hover .generi{
+    display: block;
+}
+.film_card:hover .card-black{
+    display: block;
+}
+.titolo_originale, .lingua, .voto, .cast, .titolo, .generi{
+    display: none;
+    padding-left: 2px;
+    font-size: 14px;
+}
+.titolo{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.cast li, .generi li{
+    list-style: none;
+    font-size: 10px;
+}
+
+/********** Media QUery **********/
+@media screen and (min-width: 970px) and (max-width: 1200px){
+    .film_card{
+        width: 33%;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 970px){
+    .film_card{
+        width: 33.3%;
+    }
+    
+}
+
+@media screen and (min-width: 520px) and (max-width: 769px){
+    .film_card{
+        width: 50%;
+    }
+
+    .titolo_originale, .lingua, .voto, .cast, .generi{
+        font-size: 12px;
+    }
+    .cast li, .generi li{
+        list-style: none;
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .searchbar>h1{
+        color: yellow;
+        font-size: 1.3em;
+    }
+    input{
+        width:100px;
+    }
+    .film_card{
+        width: 100%;
+    }
+
+    .titolo_originale, .lingua, .voto, .cast, .generi{
+        font-size: 12px;
+    }
+    .cast li, .generi li{
+        list-style: none;
+        font-size: 8px;
+    }
+}
