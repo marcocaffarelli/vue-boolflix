@@ -31,12 +31,19 @@
                             <div class="titolo">Titolo:{{risultato.title}}</div>
                             <!-- titolo originale -->
                             <div class="titolo_originale">Titolo originale:{{risultato.original_title}}</div>
-                            <!-- lingua -->
+                            <!-- cast -->
                             <div class="cast">
                                 <ul>Cast:
                                     <li v-for="attore in risultato.attori">{{attore}}</li> 
                                 </ul>
                             </div>
+                            <!-- genere -->
+                            <div class="generi">
+                                <ul>Genere:
+                                    <li v-for="(genere, index) in risultato.generi">{{[index+1]}} {{genere}}</li> 
+                                </ul>
+                            </div>
+                            <!-- lingua -->
                             <template>
                                 <!-- se la lingua è inglese carica l'immagine -->
                                 <div class="lingua" v-if="risultato.original_language == 'en'">Lingua:<img src="./assets/img/bandiera inglese.jpg"></div>
@@ -78,9 +85,16 @@
                             <div class="titolo">Titolo:{{risultato.name}}</div>
                             <!-- titolo originale -->
                             <div class="titolo_originale">Titolo originale:{{risultato.original_name}}</div>
+                            <!-- cast -->
                             <ul class="cast">Cast:
                                 <li v-for="attore in risultato.attori">{{attore}}</li> 
                             </ul>
+                            <!-- genere -->
+                            <div class="generi">
+                                <ul>Genere:
+                                    <li v-for="(genere, index) in risultato.generi">{{[index+1]}} {{genere}}</li> 
+                                </ul>
+                            </div>
                             <!-- lingua -->
                             <template>
                                 <!-- se la lingua è inglese carica l'immagine -->

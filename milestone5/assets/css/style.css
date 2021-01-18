@@ -71,13 +71,13 @@ main{
     border-radius: 10px;
     display: none;
 }
-.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto, .film_card:hover .cast, .film_card:hover .titolo{
+.film_card:hover .titolo_originale, .film_card:hover .lingua, .film_card:hover .voto, .film_card:hover .cast, .film_card:hover .titolo, .film_card:hover .generi{
    display: block;
  }
  .film_card:hover .card-black{
     display: block;
  }
-.titolo_originale, .lingua, .voto, .cast, .titolo{
+.titolo_originale, .lingua, .voto, .cast, .titolo, .generi{
     display: none;
     padding-left: 2px;
 }
@@ -86,7 +86,7 @@ main{
     font-weight: bold;
     text-align: center;
 }
-.cast li{
+.cast li, .generi li{
     list-style: none;
     font-size: 10px;
 }
@@ -120,10 +120,10 @@ main{
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto, .cast{
+    .titolo_originale, .lingua, .voto, .cast, .generi{
         font-size: 12px;
     }
-    .cast li{
+    .cast li, .generi li{
         list-style: none;
         font-size: 8px;
     }
@@ -144,10 +144,10 @@ main{
     .titolo{
         font-size: 18px;
     }
-    .titolo_originale, .lingua, .voto, .cast{
+    .titolo_originale, .lingua, .voto, .cast, .generi{
         font-size: 12px;
     }
-    .cast li{
+    .cast li, .generi li{
         list-style: none;
         font-size: 8px;
     }
